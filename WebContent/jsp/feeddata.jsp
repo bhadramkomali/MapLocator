@@ -9,15 +9,7 @@
 <title>::.Feed-Data.::</title>
 </head>
 <body>
-	<%
-		if(request.getAttribute("msg") != null) {
-	%>
-		<div class="aligncenter">
-			<span><%request.getAttribute("msg"); %></span>
-		</div>
-	<%
-		}
-	%>
+	<span class="aligncenter">${msg}</span>
 	<a href="home.jsp">Back</a>
 	<h2 align="center">Feed the data for the map locations</h2>
 	<form action="../feeddata.do" name="feeddataform" method="post">

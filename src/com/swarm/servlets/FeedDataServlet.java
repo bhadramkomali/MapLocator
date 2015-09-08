@@ -54,8 +54,7 @@ public class FeedDataServlet extends HttpServlet {
 		objHostelDetails.setOwnerName(ownerName);
 
 		try {
-			URL urlObj = new URL(geoCodeURL
-					+ URLEncoder.encode(address, "UTF-8"));
+			URL urlObj = new URL(geoCodeURL + URLEncoder.encode(address, "UTF-8"));
 			connection = (HttpURLConnection) urlObj.openConnection();
 			inputStream = connection.getInputStream();
 			ObjectMapper mapper = new ObjectMapper();
@@ -72,10 +71,10 @@ public class FeedDataServlet extends HttpServlet {
 			status = objHostelDao.insertHosteldetails(objHostelDetails);
 			if (status == 1) {
 				request.setAttribute("msg", "Successfully inserted the hostel details");
-				request.getRequestDispatcher("/feeddata.jsp").forward(request, response);
+				request.getRequestDispatcher("jsp/feeddata.jsp").forward(request, response);
 			} else {
 				request.setAttribute("msg", "Unable to insert the hostel details");
-				request.getRequestDispatcher("/feeddata.jsp").forward(request, response);
+				request.getRequestDispatcher("jsp/feeddata.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {

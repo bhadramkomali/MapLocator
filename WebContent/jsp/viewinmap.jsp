@@ -4,26 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="../css/viewinmap.css"/>
+<title>::.Map-Locator.::</title>
+<link type="text/css" rel="stylesheet" href="../css/viewinmap.css" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-<script type="text/javascript" src="viewinmap.js"></script>
+<script type="text/javascript" src="../js/viewinmap.js"></script>
 </head>
 <body>
 	<div id="aligncenter">
-		<a href="home.jsp">Back</a><br> Address:
-		<select id="area" name="area">
-			<option>--select--</option>
-			<option>Madhapur</option>
-			<option>S.R.Nagar</option>
-			<option>Ameerpet</option>
-			<option>Jubilee Hills</option>
-			<option>Banjara Hills</option>
-			<option>Abids</option>
-		</select>
-		<button name="See" onclick="viewInMap();">See</button>
-		<br>
-		<div id="map" style="width: 800px; height: 800px;"></div>
+		<a href="home.jsp">Back</a><br>
+		<form action="#" method="get" id="viewinmapform">
+			Address: 
+			<select id="area" name="area">
+				<option>--select--</option>
+				<option>Madhapur</option>
+				<option>S.R.Nagar</option>
+				<option>Ameerpet</option>
+				<option>Jubilee Hills</option>
+				<option>Banjara Hills</option>
+				<option>Abids</option>
+			</select>
+			<br>
+			<div id="map" style="width: 800px; height: 800px;"></div>
+		</form>
 	</div>
 </body>
 </html>

@@ -53,12 +53,13 @@ public class HostelDao {
 		Connection connection = null;
 		ResultSet hostelsResultSet = null;
 		PreparedStatement getHostelsPreparedStatement = null;
-		String getHostelsQuery = "SELECT * FROM hostel_details WHERE hostel_area_name = ?";
+		String getHostelsQuery = "SELECT * FROM hostel_details WHERE hostel_area_name=?";
 		String dbName = "hostel";
 		try {
 			connection = DBUtil.getConnection(dbName);
 			if (connection != null) {
 				getHostelsPreparedStatement = connection.prepareStatement(getHostelsQuery);
+				getHostelsPreparedStatement.setString(1, area);
 				hostelsResultSet = getHostelsPreparedStatement.executeQuery();
 				while (hostelsResultSet.next()) {
 					HostelDetails objHostelDetails = new HostelDetails();
